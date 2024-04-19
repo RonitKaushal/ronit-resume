@@ -1,33 +1,1905 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+:root
+{
+    --white: #fff;
+    --black: #080808;
+    --light: #cfcfcf;
+    --accent: #e7d9f4;
+    --bonus-accent: #ddd6e9;
+    --dark: #9a9a9a;
+    --dark-purple: #9c8daf;
+    --light-purple: #e0c8ff;
+    --dark-green: #9abc8a;
+    --dark-black: #1d1d1d;
+    --dark-white: #ffffff20;
+    --dark-transparent: #0000008a;
+    --green: rgb(132, 255, 132);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+body
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    min-height: 100vh;
+    min-width: 100vw;
+    background: var(--black);
+    color: var(--light);
+    font-family: "Poppins", sans-serif;
+    font-size: 1em;
+    line-height: 1.4em;
 }
+.main
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 95vw;
+    height: auto;
+}
+/* /////////////////// Desktop CSS /////////////////////// */
+@media only screen and (min-width: 900px)
+{
+    a
+    {
+        color: var(--bonus-accent);
+        text-decoration: none;
+    }
+    .connect-overlay
+    {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        z-index: 200;
+        background: var(--dark-transparent);
+        padding: 10px;
+        border-radius: 15px;
+    }
+    .connect-overlay.close
+    {
+        display: none;
+    }
+    .connect_container
+    {
+        position: relative;
+        background: var(--dark-black);
+        border-radius: 15px;
+        padding: 20px;
+        border: 1px solid var(--dark-white);
+    }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+
+
+    .connect_container .close-btn
+    {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: -10px;
+        right: -10px;
+        height: 30px;
+        width: 30px;
+        font-size: 30px;
+        box-shadow: 0 0 20px 0 var(--black);
+        border: 2px solid var(--dark-purple);
+        border-radius: 50%;
+        color: var(--white);
+        background: var(--light-purple);
+        cursor: pointer;
+    }
+    .title
+    {
+        font-size: 25px;
+        color: var(--white);
+        margin-top: 5px;
+    }
+    .link_container
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+    .link_box
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin: 5px 0;
+        cursor: pointer;
+    }
+    .link_img
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 50px;
+        overflow: hidden;
+        border: 1px solid var(--dark-white);   
+        border-radius: 10px 0 0 10px;
+        background: var(--bonus-accent);
+    }
+    .link_img img
+    {
+        width: 70%;
+
+    }
+    .link
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        text-align: left;
+        overflow: hidden;
+        border: 1px solid var(--dark-white);   
+        border-radius: 0 10px 10px 0;
+        font-size: 15px;
+    }
+    .link p
+    {
+        width: 100%;
+        text-align: left;
+        margin: 10px;
+        color: var(--accent);
+    }
+        /* //////////////// Section A Start /////////////// */
+    .main .sectionA
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 30%;
+        height: auto;
+    }
+    .details-section
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        margin: 10px;
+        background: var(--dark-black);
+        border: 1px solid var(--dark-white);
+        padding: 10px;
+        padding-bottom: 20px;
+        border-radius: 15px;
+    }
+    .main .sectionA .banner
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: auto;    
+        border-radius: 10px;
+        overflow: hidden;
+        background: #000;
+        box-shadow: 0 -50px 40px 5px #000 inset;
+    }
+    .main .sectionA .banner img
+    {
+        z-index: 0;
+        width: 100%;
+    }
+    .about-section
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin-top: -70px;
+    }
+    .about-section .name h2
+    {
+        font-size: 40px;
+        padding-left: 10px;
+        color: var(--white);
+    }
+    .about-section .role h4
+    {
+        margin: 20px;
+        font-size: 20px;
+        color: var(--bonus-accent);
+    }
+    .about-section .role .skills
+    {
+        position: relative;
+        display: flex;
+        justify-content: left;
+        align-items: start;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 10px 0;
+        padding-left: 10px;
+    }
+    .about-section .role .skills .skill
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--green);
+        color: var(--black);
+        padding: 0px 8px;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: 5px;
+        margin: 3px;
+    }
+    .about-section .discription h5
+    {
+        position: relative;
+        padding: 0 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--white);
+        opacity: 0.6;
+    }
+    .contact-btn-section
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 95%;
+        height: auto;
+    }
+    .contact-btn-section .contact-btn
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 40px;
+        border-radius: 10px;
+        border: 0;
+        background: var(--light-purple);
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .experience-section
+    {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 15px;
+    }
+    .title-experi
+    {
+        position: relative;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--white);
+        transition: 0.5s;
+        width: 100%;
+        text-align: center;
+    }
+    .experi-card.glow
+    {
+        color: var(--white);
+    }
+    .experi-card:hover
+    {
+        color: var(--white);
+    }
+    .experi-card
+    {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: auto;   
+        padding: 10px 0;
+        margin-top: 20px;
+        border: 1px solid var(--dark-white);
+        background: var(--dark-black);
+        border-radius: 15px;
+    }
+    .experi-card-details
+    {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        width: 95%;
+        height: auto;
+    }
+    .experi-card-details .image
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        overflow: hidden;
+        background: var(--black);
+        transition: 0.5s;
+    }
+    .experi-card-details .image img
+    {
+        width: 90%;
+        border-radius: 8px;
+    }
+    .experi-details
+    {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-direction: column;
+        width: 78%;
+        height: 100%;
+        margin-left: 10px;
+    }
+    .experi-details .experi-title
+    {
+        font-size: 20px;
+        font-weight: 600;
+        height: 100%;
+        margin-bottom: 5px;
+        transition: 0.5s;
+    }
+    .experi-card.glow .experi-details .experi-title
+    {
+        color: var(--white);
+    }
+    .experi-details .experi-company
+    {
+        font-size: 16px;
+        font-weight: 400;
+        height: 100%;
+        color: var(--bonus-accent);
+    }
+    .timeline
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 85%;
+        height: 3px;
+        background: var(--light);
+        margin-top: 20px;
+        margin-bottom: 10px;
+        transition: 0.5s;
+    }
+    .timeline::after
+    {
+        content: '';
+        position: absolute;
+        left: -5px;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background: var(--white);
+        border: 2px solid var(--light);
+        transition: 0.5s;
+    }
+    .timeline::before
+    {
+        content: '';
+        position: absolute;
+        right: -5px;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background: var(--white);
+        border: 2px solid var(--light);
+        transition: 0.5s;
+    }
+    .experi-card:hover .timeline
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--light-purple);
+    }
+    .experi-card:hover .timeline::after
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--white);
+        border: 3px solid var(--light-purple);
+    }
+    .experi-card:hover .timeline::before
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--white);
+        border: 3px solid var(--light-purple);
+    }
+
+
+
+    .experi-card.glow .timeline
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--light-purple);
+    }
+    .experi-card.glow .timeline::after
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--white);
+        border: 3px solid var(--light-purple);
+    }
+    .experi-card.glow .timeline::before
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--white);
+        border: 3px solid var(--light-purple);
+    }
+    .time-start
+    {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 33%;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: left;
+        transition: 0.5s;
+    }
+    .time-duration
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+        font-weight: 600;
+        text-align: left;
+        color: var(--light);
+        transition: 0.5s;
+        font-size: 15px;
+    }
+    .experi-card.glow .time-duration
+    {
+        color: var(--light-purple); 
+    }
+    .experi-card:hover .time-duration
+    {
+        color: var(--light-purple); 
+    }
+    .time-end
+    {
+        position: relative;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: 33%;
+        text-align: right;
+        font-weight: 600;
+        text-align: left;
+        transition: 0.5s;
+        font-size: 15px;
+    }
+    .time-section
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+
+
+
+
+
+
+
+
+    .projects-btn, .close-btn
+    {
+        display: none;
+    }
+    /* //////////////// Section A End /////////////// */
+    .main .sectionB
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        width: 70%;
+        padding: 10px;
+        height: auto;
+    }
+    .main .sectionB .title
+    {
+        position: relative;
+        margin-top: 30px;
+        margin-bottom: 35px;
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--white);
+        transition: 0.5s;
+    }
+    .main .sectionB .container
+    {
+        columns: 3;
+        column-gap: 40px;
+        column-rule: solid #000;
+        width: 100%;
+    }
+    .main .sectionB .container .pin
+    {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        break-inside: avoid;
+        margin-bottom: 20px;
+        background: var(--dark-black);
+        overflow: hidden;
+        border-radius: 15px;
+        padding: 10px;
+        cursor: pointer;
+        border: 1px solid var(--dark-white);
+    }
+    .main .sectionB .container .pin .image
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+
+    }
+    .main .sectionB .container .pin .image img
+    {
+      position: relative !important;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    .main .sectionB .container .pin a
+    {
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+    .tools
+    {
+        position: relative;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .tool
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--green);
+        color: var(--black);
+        padding: 0px 8px;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: 5px;
+        margin: 3px;
+    }
+}
+/* ///////////////////////////// */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* /////////////////// Desktop CSS /////////////////////// */
+@media only screen and (min-width: 400px) and (max-width: 900px)
+{
+    a
+    {
+        text-decoration: none;
+    }
+    .connect-overlay
+    {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        z-index: 200;
+        background: var(--dark-transparent);
+        padding: 10px;
+        border-radius: 15px;
+    }
+    .connect-overlay.close
+    {
+        display: none;
+    }
+    .connect_container
+    {
+        position: relative;
+        background: var(--dark-black);
+        border-radius: 15px;
+        padding: 20px;
+        border: 1px solid var(--dark-white);
+    }
+
+
+
+
+    .connect_container .close-btn
+    {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: -10px;
+        right: -10px;
+        height: 30px;
+        width: 30px;
+        font-size: 30px;
+        box-shadow: 0 0 20px 0 var(--black);
+        border: 2px solid var(--dark-purple);
+        border-radius: 50%;
+        color: var(--white);
+        background: var(--light-purple);
+        cursor: pointer;
+    }
+    .title
+    {
+        font-size: 25px;
+        color: var(--white);
+        margin-top: 5px;
+    }
+    .link_container
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+    .link_box
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin: 5px 0;
+        cursor: pointer;
+    }
+    .link_img
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 50px;
+        overflow: hidden;
+        border: 1px solid var(--dark-white);   
+        border-radius: 10px 0 0 10px;
+        background: var(--bonus-accent);
+    }
+    .link_img img
+    {
+        width: 70%;
+    }
+    .link
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        text-align: left;
+        overflow: hidden;
+        border: 1px solid var(--dark-white);   
+        border-radius: 0 10px 10px 0;
+        font-size: 15px;
+    }
+    .link p
+    {
+        width: 100%;
+        text-align: left;
+        margin: 10px;
+        color: var(--accent);
+    }
+        /* //////////////// Section A Start /////////////// */
+    .main .sectionA
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        height: auto;
+    }
+    .details-section
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        margin: 10px;
+        background: var(--dark-black);
+        border: 1px solid var(--dark-white);
+        padding: 10px;
+        padding-bottom: 20px;
+        border-radius: 15px;
+    }
+    .main .sectionA .banner
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: auto;    
+        border-radius: 10px;
+        overflow: hidden;
+        background: #000;
+        box-shadow: 0 -50px 40px 5px #000 inset;
+    }
+    .main .sectionA .banner img
+    {
+        z-index: 0;
+        width: 100%;
+    }
+    .about-section
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin-top: -55px;
+    }
+    .about-section .name h2
+    {
+        font-size: 35px;
+        padding-left: 10px;
+        color: var(--white);
+    }
+    .about-section .role h4
+    {
+        margin-top: 7px;
+        margin-bottom: 10px;
+        margin-left: 20px;
+        font-size: 20px;
+        color: var(--bonus-accent);
+    }
+    .about-section .role .skills
+    {
+        position: relative;
+        display: flex;
+        justify-content: left;
+        align-items: start;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 10px 0;
+        padding-left: 10px;
+    }
+    .about-section .role .skills .skill
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--green);
+        color: var(--black);
+        padding: 0px 8px;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: 5px;
+        margin: 3px;
+    }
+    .about-section .discription h5
+    {
+        position: relative;
+        padding: 0 10px;
+        margin-bottom: 10px;
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--white);
+        opacity: 0.6;
+    }
+    .contact-btn-section
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 95%;
+        height: auto;
+    }
+    .contact-btn-section .contact-btn
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 40px;
+        border-radius: 10px;
+        border: 0;
+        background: var(--light-purple);
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .experience-section
+    {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1px solid var(--dark-black);
+    }
+    .title-experi
+    {
+        position: relative;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--white);
+        transition: 0.5s;
+        width: 100%;
+        text-align: center;
+    }
+    .experi-card.glow
+    {
+        color: var(--white);
+    }
+    .experi-card:hover
+    {
+        color: var(--white);
+    }
+    .experi-card
+    {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: auto;   
+        padding: 10px 0;
+        margin-top: 20px;
+        border: 1px solid var(--dark-white);
+        background: var(--dark-black);
+        border-radius: 15px;
+    }
+    .experi-card-details
+    {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        width: 95%;
+        height: auto;
+    }
+    .experi-card-details .image
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    .experi-card-details .image img
+    {
+        width: 100%;
+        height: 100%;
+    }
+    .experi-details
+    {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-direction: column;
+        width: 78%;
+        height: 100%;
+        margin-left: 10px;
+    }
+    .experi-details .experi-title
+    {
+        font-size: 18px;
+        font-weight: 600;
+        height: 100%;
+        margin-bottom: 5px;
+        transition: 0.5s;
+    }
+    .experi-card.glow .experi-details .experi-title
+    {
+        color: var(--white);
+    }
+    .experi-details .experi-company
+    {
+        font-size: 14px;
+        font-weight: 400;
+        height: 100%;
+        color: var(--bonus-accent);
+    }
+    .timeline
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 85%;
+        height: 3px;
+        background: var(--light);
+        margin-top: 20px;
+        margin-bottom: 10px;
+        transition: 0.5s;
+    }
+    .timeline::after
+    {
+        content: '';
+        position: absolute;
+        left: -5px;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background: var(--white);
+        border: 2px solid var(--light);
+        transition: 0.5s;
+    }
+    .timeline::before
+    {
+        content: '';
+        position: absolute;
+        right: -5px;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background: var(--white);
+        border: 2px solid var(--light);
+        transition: 0.5s;
+    }
+    .experi-card:hover .timeline
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--light-purple);
+    }
+    .experi-card:hover .timeline::after
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--white);
+        border: 3px solid var(--light-purple);
+    }
+    .experi-card:hover .timeline::before
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--white);
+        border: 3px solid var(--light-purple);
+    }
+
+
+
+    .experi-card.glow .timeline
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--light-purple);
+    }
+    .experi-card.glow .timeline::after
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--white);
+        border: 3px solid var(--light-purple);
+    }
+    .experi-card.glow .timeline::before
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--white);
+        border: 3px solid var(--light-purple);
+    }
+    .time-start
+    {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 33%;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: left;
+        transition: 0.5s;
+    }
+    .time-duration
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+        font-weight: 600;
+        text-align: left;
+        color: var(--light);
+        transition: 0.5s;
+        font-size: 15px;
+    }
+    .experi-card.glow .time-duration
+    {
+        color: var(--light-purple); 
+    }
+    .experi-card:hover .time-duration
+    {
+        color: var(--light-purple); 
+    }
+    .time-end
+    {
+        position: relative;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: 33%;
+        text-align: right;
+        font-weight: 600;
+        text-align: left;
+        transition: 0.5s;
+        font-size: 15px;
+    }
+    .time-section
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+
+
+
+    .projects-btn, .close-btn
+    {
+        display: none;
+    }
+    /* //////////////// Section A End /////////////// */
+    .main .sectionB
+    {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-direction: column;
+        width: 50%;
+        padding: 10px;
+        height: 100vh;
+        overflow: scroll;
+    }
+    .main .sectionB .title
+    {
+        position: relative;
+        margin-top: 30px;
+        margin-bottom: 35px;
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--white);
+        transition: 0.5s;
+    }
+    .main .sectionB .container
+    {
+        columns: 1;
+        column-gap: 0px;
+        column-rule: solid #000;
+        width: 100%;
+    }
+    .main .sectionB .container .pin
+    {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 95%;
+        height: auto;
+        break-inside: avoid;
+        margin-bottom: 20px;
+        background: var(--dark-black);
+        overflow: hidden;
+        border-radius: 15px;
+        padding: 10px;
+        cursor: pointer;
+        border: 1px solid var(--dark-white);
+    }
+    .main .sectionB .container .pin .image
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+    }
+    .main .sectionB .container .pin .image img
+    {
+      position: relative !important;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    .main .sectionB .container .pin a
+    {
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 4px;
+        color: var(--bonus-accent);
+    }
+    .tools
+    {
+        position: relative;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .tool
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--green);
+        color: var(--black);
+        padding: 0px 8px;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: 5px;
+        margin: 3px;
+    }
+}
+/* ////////////////////////////////////////// */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* /////////////////// Desktop CSS /////////////////////// */
+@media only screen and (min-width: 0px) and (max-width: 400px)
+{
+    a
+    {
+        text-decoration: none;
+    }
+    .connect-overlay
+    {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        z-index: 200;
+        background: var(--dark-transparent);
+        padding: 10px;
+        border-radius: 15px;
+    }
+    .connect-overlay.close
+    {
+        display: none;
+    }
+    .connect_container
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: var(--dark-black);
+        border-radius: 15px;
+        padding: 10px;
+        width: 85%;
+        max-width: 90%;
+        border: 1px solid var(--dark-white);
+    }
+
+
+
+
+    .connect_container .close-btn
+    {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: -10px;
+        right: -10px;
+        height: 30px;
+        width: 30px;
+        font-size: 30px;
+        box-shadow: 0 0 20px 0 var(--black);
+        border: 2px solid var(--dark-purple);
+        border-radius: 50%;
+        color: var(--white);
+        background: var(--light-purple);
+        cursor: pointer;
+    }
+    .title
+    {
+        width: 100%;
+        font-size: 25px;
+        color: var(--white);
+        margin-top: 5px;
+    }
+    .link_container
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        
+        height: auto;
+        margin-top: 20px;
+    }
+    .link_box
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin: 5px 0;
+        cursor: pointer;
+    }
+    .link_img
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 50px;
+        overflow: hidden;
+        border: 1px solid var(--dark-white);   
+        border-radius: 10px 0 0 10px;
+        background: var(--bonus-accent);
+    }
+    .link_img img
+    {
+        width: 70%;
+    }
+    .link
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        text-align: left;
+        overflow: hidden;
+        border: 1px solid var(--dark-white);   
+        border-radius: 0 10px 10px 0;
+        font-size: 15px;
+    }
+    .link p
+    {
+        width: 100%;
+        text-align: left;
+        margin: 10px;
+        color: var(--accent);
+    }
+        /* //////////////// Section A Start /////////////// */
+    .main .sectionA
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        padding-bottom: 60px;
+    }
+    .details-section
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        margin: 10px;
+        background: var(--dark-black);
+        border: 1px solid var(--dark-white);
+        padding: 10px;
+        padding-bottom: 20px;
+        border-radius: 15px;
+    }
+    .main .sectionA .banner
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: auto;    
+        border-radius: 10px;
+        overflow: hidden;
+        background: #000;
+        box-shadow: 0 -50px 40px 5px #000 inset;
+    }
+    .main .sectionA .banner img
+    {
+        z-index: 0;
+        width: 100%;
+    }
+    .about-section
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin-top: -70px;
+    }
+    .about-section .name h2
+    {
+        font-size: 40px;
+        padding-left: 5px;
+        color: var(--white);
+    }
+    .about-section .role h4
+    {
+        margin: 20px;
+        font-size: 20px;
+        color: var(--bonus-accent);
+    }
+    .about-section .role .skills
+    {
+        position: relative;
+        display: flex;
+        justify-content: left;
+        align-items: start;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 10px 0;
+        padding-left: 5px;
+    }
+    .about-section .role .skills .skill
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--green);
+        color: var(--black);
+        padding: 0px 8px;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: 5px;
+        margin: 3px;
+    }
+    .about-section .discription h5
+    {
+        position: relative;
+        padding: 0 10px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--white);
+        opacity: 0.6;
+    }
+    .contact-btn-section
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 95%;
+        height: auto;
+    }
+    .contact-btn-section .contact-btn
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 40px;
+        border-radius: 10px;
+        border: 0;
+        background: var(--light-purple);
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .experience-section
+    {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 15px;
+    }
+    .title-experi
+    {
+        position: relative;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--white);
+        transition: 0.5s;
+        width: 100%;
+        text-align: center;
+    }
+    .experi-card.glow
+    {
+        color: var(--white);
+    }
+    .experi-card:hover
+    {
+        color: var(--white);
+    }
+    .experi-card
+    {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: auto;   
+        padding: 10px 0;
+        margin-top: 20px;
+        border: 1px solid var(--dark-white);
+        background: var(--dark-black);
+        border-radius: 15px;
+    }
+    .experi-card-details
+    {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        width: 95%;
+        height: auto;
+    }
+    .experi-card-details .image
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    .experi-card-details .image img
+    {
+        width: 100%;
+    }
+    .experi-details
+    {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-direction: column;
+        width: 78%;
+        height: 100%;
+        margin-left: 10px;
+    }
+    .experi-details .experi-title
+    {
+        font-size: 20px;
+        font-weight: 600;
+        height: 100%;
+        margin-bottom: 5px;
+        transition: 0.5s;
+    }
+    .experi-card.glow .experi-details .experi-title
+    {
+        color: var(--white);
+    }
+    .experi-details .experi-company
+    {
+        font-size: 16px;
+        font-weight: 400;
+        height: 100%;
+        color: var(--bonus-accent);
+    }
+    .timeline
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 85%;
+        height: 3px;
+        background: var(--light);
+        margin-top: 20px;
+        margin-bottom: 10px;
+        transition: 0.5s;
+    }
+    .timeline::after
+    {
+        content: '';
+        position: absolute;
+        left: -5px;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background: var(--white);
+        border: 2px solid var(--light);
+        transition: 0.5s;
+    }
+    .timeline::before
+    {
+        content: '';
+        position: absolute;
+        right: -5px;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background: var(--white);
+        border: 2px solid var(--light);
+        transition: 0.5s;
+    }
+    .experi-card:hover .timeline
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--light-purple);
+    }
+    .experi-card:hover .timeline::after
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--white);
+        border: 3px solid var(--light-purple);
+    }
+    .experi-card:hover .timeline::before
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--white);
+        border: 3px solid var(--light-purple);
+    }
+
+
+
+    .experi-card.glow .timeline
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--light-purple);
+    }
+    .experi-card.glow .timeline::after
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--white);
+        border: 3px solid var(--light-purple);
+    }
+    .experi-card.glow .timeline::before
+    {
+        box-shadow: 0 0 10px 0 var(--light-purple);
+        background: var(--white);
+        border: 3px solid var(--light-purple);
+    }
+    .time-start
+    {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 33%;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: left;
+        transition: 0.5s;
+    }
+    .time-duration
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+        font-weight: 600;
+        text-align: left;
+        color: var(--light);
+        transition: 0.5s;
+        font-size: 15px;
+    }
+    .experi-card.glow .time-duration
+    {
+        color: var(--light-purple); 
+    }
+    .experi-card:hover .time-duration
+    {
+        color: var(--light-purple); 
+    }
+    .time-end
+    {
+        position: relative;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: 33%;
+        text-align: right;
+        font-weight: 600;
+        text-align: left;
+        transition: 0.5s;
+        font-size: 15px;
+    }
+    .time-section
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+
+
+
+
+
+
+
+
+
+
+.projects-btn
+{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 5px;
+    width: 85%;
+    min-height: 40px;
+    border-radius: 10px;
+    padding: 5px 0;
+    border: 0;
+    background: var(--light-purple);
+    color: var(--black);
+    box-shadow: 0 0px 20px 0 var(--dark-black);
+    font-size: 20px;
+    font-weight: 700;
+}
+    /* //////////////// Section A End /////////////// */
+    .main .sectionB
+    {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        width: 97%;
+        top: 250px;
+        background: var(--black);
+        padding: 10px;
+        padding-top: 30px;
+        border-radius: 15px;
+        border: 1px solid var(--dark-black);
+        box-shadow: 0 0 20px 5px var(--black);
+        height: auto;
+        z-index: 200;
+    }
+    .main .sectionB.close
+    {
+        display: none;
+    }
+    .main .sectionB .close-btn
+    {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: -20px;
+        right: 0px;
+        height: 40px;
+        width: 40px;
+        font-size: 30px;
+        box-shadow: 0 0 20px 0 var(--black);
+        border: 2px solid var(--dark-purple);
+        border-radius: 50%;
+        color: var(--white);
+        background: var(--light-purple);
+    }
+    .main .sectionB .title
+    {
+        position: relative;
+        margin-top: 30px;
+        margin-bottom: 35px;
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--white);
+        transition: 0.5s;
+    }
+    .main .sectionB .container
+    {
+        columns: 2;
+        column-gap: 10px;
+        column-rule: solid #000;
+        width: 100%;
+    }
+    .main .sectionB .container .pin
+    {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        break-inside: avoid;
+        margin-bottom: 15px;
+        overflow: hidden;
+        padding: 7px;
+        cursor: pointer;
+        border-radius: 15px;
+        background: var(--dark-black);
+        border: 1px solid var(--dark-white);
+    }
+    .main .sectionB .container .pin .image
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+    }
+    .main .sectionB .container .pin .image img
+    {
+      position: relative !important;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    .main .sectionB .container .pin a
+    {
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 0px;
+        color: var(--bonus-accent);
+    }
+    .tools
+    {
+        position: relative;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .tool
+    {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--green);
+        color: var(--black);
+        padding: 0px 8px;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: 5px;
+        margin: 3px;
+    }
 }

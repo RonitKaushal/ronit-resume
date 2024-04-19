@@ -1,113 +1,232 @@
-import Image from "next/image";
+'use client'
+ 
+import { useRouter } from 'next/navigation';
+import { myData } from './data'; // If using data.js
+import Link from 'next/link'
+import Image from 'next/image'
+import Script from 'next/script'
+import Head from 'next/head'
 
-export default function Home() {
+const MyPage = () => {
+  const router = useRouter(); // Get router (optional)
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+
+<Head>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+      
+</Head>
+<div className="connect-overlay close" id="connect-overlay">
+    <div className="connect_container">
+      <div className="close-btn" id="overlay-close">x</div>
+      <div className="title">
+        <h3>Connect</h3>
+      </div>
+      <div className="link_container">
+        <a href="https://www.linkedin.com/in/ronitkaushal" className="link_box">
+          <div className="link_img">
+            <img src="images/linkedin.png" />
+          </div>
+          <div className="link"><p>Linkedin / Ronit Kaushal</p></div>
+        </a>
+        <a href="https://github.com/RonitKaushal" className="link_box">
+          <div className="link_img">
+            <img src="images/github-logo.png" />
+          </div>
+          <div className="link"><p>GitHub / Ronit Kaushal</p></div>
+        </a>
+        <a href="tel: +91 9104320305" className="link_box">
+          <div className="link_img">
+            <img src="images/call.png" />
+          </div>
+          <div className="link"><p>Call / +91 9104320305</p></div>
+        </a>
+        <a href="mailto:ronitkaushal445@gmail.com" className="link_box">
+          <div className="link_img">
+            <img src="images/gmail.png" />
+          </div>
+          <div className="link"><p>Gmail / ronitkaushal445@gmail.com</p></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+
+  {/* <!-- //////////////////////////////////////////////// --> */}
+
+
+
+
+    <div className="main">
+        <div className="sectionA">
+            <div className="details-section">
+            <div className="banner">
+                <img src="images/portfolio Banner.png" />
+            </div>
+            <div className="about-section">
+                <div className="name">
+                    <h2>Ronit Kaushal</h2>
+                </div>
+                <div className="role">
+                  <div className="skills">
+                    <div className="skill">HTML5</div>
+                    <div className="skill">CSS3</div>
+                    <div className="skill">JavaScript</div>
+                    <div className="skill">PHP</div>
+                    <div className="skill">MySql</div>
+                    <div className="skill">Python</div>
+                    <div className="skill">Java</div>
+                    <div className="skill">C++</div>
+                  </div>
+
+
+                </div>
+                <div className="discription">
+                    <h5>
+                      Computer engineering student with aptitudes in web development. Natural skills at quickly learning and applying new technologies. Eager for industry exposure to hone skill set and professional competence.                
+                    </h5>  
+                    </div>
+            </div>
+            <div className="contact-btn-section">
+                <button className="contact-btn" id="overlay-open">Connect</button>
+            </div>
         </div>
-      </div>
+        {/* <!-- ---------------------------     Experience Section Start    ------------------------------- --> */}
+            <div className="experience-section">
+                <h4 className="title-experi">Experience</h4>
+                {/* <!-- ---------------------- Experience card start ----------------- --> */}
+                <div className="experi-card">
+                    <div className="experi-card-details">
+                        <div className="image">
+                            <img src="images/techR_logo.jpeg" />
+                        </div>
+                        <div className="experi-details">
+                            <div className="experi-title">Wordpress Designer</div>
+                            <div className="experi-company">Tech Rational</div>
+                        </div>
+                    </div>
+                    <div className="time-section">
+                        <div className="time-start">Aug 2023</div>
+                        <div className="time-duration">6 Months</div>
+                        <div className="time-end">Jan 2024</div>
+                    </div>
+                    <div className="timeline"></div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+                </div>
+                {/* <!-- ---------------------- Experience card end -----------------  -->
+                <!-- ---------------------- Experience card start ----------------- --> */}
+                <div className="experi-card">
+                    <div className="experi-card-details">
+                        <div className="image">
+                            <img src="images/techweLogo.jpeg" />
+                        </div>
+                        <div className="experi-details">
+                            <div className="experi-title">Web Designer Intern</div>
+                            <div className="experi-company">TECHWE INNOVATION PRIVATE LIMITED</div>
+                        </div>
+                    </div>
+                    <div className="time-section">
+                        <div className="time-start">Sep 2022</div>
+                        <div className="time-duration">1 Month</div>
+                        <div className="time-end">Oct 2022</div>
+                    </div>
+                    <div className="timeline"></div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+                </div>
+                {/* <!-- ---------------------- Experience card end -----------------  --> */}
+            </div>
+                    {/* <!-- ---------------------------     Experience Section Start    ------------------------------- -->
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
-}
+                            <!-- ---------------------------     Education Section Start    ------------------------------- --> */}
+            <div className="experience-section">
+                <h4 className="title-experi">Education</h4>
+                {/* <!-- ---------------------- Experience card start ----------------- --> */}
+                <div className="experi-card">
+                    <div className="experi-card-details">
+                        <div className="image">
+                            <img src="images/diploma.jpeg" />
+                        </div>
+                        <div className="experi-details">
+                            <div className="experi-title">Diploma. Computer Engineering</div>
+                            <div className="experi-company">Shree Swaminarayan Polytechnic</div>
+                        </div>
+                    </div>
+                </div>
+                {/* <!-- ---------------------- Experience card end -----------------  -->
+                <!-- ---------------------- Experience card start ----------------- --> */}
+                <div className="experi-card">
+                    <div className="experi-card-details">
+                        <div className="image">
+                            <img src="images/school.png" />
+                        </div>
+                        <div className="experi-details">
+                            <div className="experi-title">Secondary School</div>
+                            <div className="experi-company">Mount Carmel High School</div>
+                        </div>
+                    </div>
+                </div>
+                {/* <!-- ---------------------- Experience card end -----------------  --> */}
+
+            </div>
+                    {/* <!-- ---------------------------     Experience Section Start    ------------------------------- --> */}
+
+
+
+                </div>
+                <div className="projects-btn" id="secB-open">Projects</div>
+                <div className="sectionB" id="sectionB">
+            <div className="close-btn" id="secB-close">x</div>
+            <div className="container">
+                {/* <!-- Pin Start --> */}
+                <div className="pin">
+                <div className="image">
+                  <Image src="/images/projects.png"
+                      
+                      
+                      fill
+
+                      />
+                </div>
+                </div>
+
+
+                {myData.map((item) => (
+                <div className="pin" key={item.id}>
+                    <div className="image">
+                      <Image src={item.image}
+                      
+                      width={500}
+                      height={500}
+
+                      />
+                    </div> 
+                      <Link href={item.path} >{item.name}</Link>
+                      <div className="tools">
+                        <div className="tool">HTML5</div>
+                        <div className="tool">CSS3</div>
+                        <div className="tool">JavaScript</div>
+                      </div>
+                    </div>
+                ))}
+
+              </div>
+        </div>
+    </div>
+
+
+    <Script src="/script.js" />
+
+    </div>
+
+
+);
+};
+
+export default MyPage;
