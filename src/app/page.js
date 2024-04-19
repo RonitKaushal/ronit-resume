@@ -15,8 +15,8 @@ const MyPage = () => {
 
 <Head>
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <Script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></Script>
+<Script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></Script>
 
       
 </Head>
@@ -221,7 +221,7 @@ const MyPage = () => {
     </div>
 
 
-    <Script src="/script.js" />
+    <Script src="/script.js" ></Script>
 
     </div>
 
